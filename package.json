@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./dist/index.js",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "dev": "nodemon src -e ts,json --exec 'tsx src'",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
