@@ -7,13 +7,11 @@
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "dev": "nodemon src -e ts,json --exec 'tsx src'",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage",
     "lint": "eslint 'src/**/*.ts' --fix",
     "prepare": "husky install"
   },
-  "src/**/*.{js,ts}": [
-    "npm run lint",
-    "npm test -- --findRelatedTests"
-  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -23,6 +21,7 @@
     "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
+    "git-commit-msg-linter": "^5.0.6",
     "husky": "^8.0.3",
     "jest": "^29.7.0",
     "lint-staged": "^15.2.0",
